@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+          <a-assets>
+                <a-asset-item id="bowling-pin" src="bowling-pin.obj"></a-asset-item>
+                <a-asset-item id="bowling-pin-mtl" src="bowling-pin.mtl"></a-asset-item>
+          </a-assets>
+
+            <a-box static-body color="darkgreen" depth="40" height="0.2" width="5" rotation="0 0 0" position="0 -1 0"></a-box>
+            <a-sky color="lightblue"></a-sky>
+
+            <!-- THE BALL -->
+            <a-sphere id="theBall" static-body segmentsWidth="5" color="yellow" radius="0.4" position="0 -10 0" mass="10"></a-sphere>
+
+            <!-- BOWLING PINS -->
+            <a-entity position="0 0 3" scale=".6 .6 .6">
+              <a-obj-model pin-monitor color="grey" id="pin10" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="-1.5 -.5 -6" mass="0.5"></a-obj-model>
+              <a-obj-model pin-monitor color="grey" id="pin9" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="-.5 -.5 -6" mass="0.5"></a-obj-model>
+              <a-obj-model pin-monitor color="grey" id="pin8" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position=".5 -.5 -6" mass="0.5"></a-obj-model>
+              <a-obj-model pin-monitor color="grey" id="pin7" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="1.5 -.5 -6" mass="0.5"></a-obj-model>
+
+              <a-obj-model pin-monitor color="grey" id="pin6" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="-1 -.5 -5" mass="0.5"></a-obj-model>
+              <a-obj-model pin-monitor color="grey" id="pin5" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="0 -.5 -5" mass="0.5"></a-obj-model>
+              <a-obj-model pin-monitor color="grey" id="pin4" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="1 -.5 -5" mass="0.5"></a-obj-model>
+
+              <a-obj-model pin-monitor color="grey" id="pin3" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="-.5 -.5 -4" mass="0.5"></a-obj-model>
+              <a-obj-model pin-monitor color="grey" id="pin2" dynamic-body obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position=".5 -.5 -4" mass="0.5"></a-obj-model>
+
+              <a-obj-model pin-monitor dynamic-body color="grey" id="pin1" obj-model="obj: #bowling-pin; mtl: #bowling-pin-mtl" rotation="0 0 0" position="0 -.5 -3" mass="0.5"></a-obj-model>
+            </a-entity>
+
+            <!-- <a-box id="blueBox" color="lightblue" position="-3 3 0" mass="0.5"></a-box> -->
+            <a-box id="redBox" static-body color="red" position="6 3 8" mass="0.5"></a-box>
+            <a-cone id="cone" color="tomato" radius-bottom=".2" radius-top="0.01" position="3 2 10"></a-cone>
+
+            <a-box id="ballButton" depth=".2" height=".7" width="1.5" position="-1.5 1 13">
+              <a-entity id="ballButtonText" position="0 0 .15" text="value: Click here with the circular cursor to get the ball!; color: black; align: center; side: double; wrapCount: 12" scale=".9 .9 .9"></a-entity>
+            </a-box>
+
+            <a-entity player-monitor class="player" id="player"
+                camera
+                jump-ability
+                universal-controls
+                kinematic-body
+                position="0 3 15">
+                <a-cursor></a-cursor>
+            </a-entity>
+        </a-scene>
+    </body>
+    <script src="script.js"></script>
+</html>
