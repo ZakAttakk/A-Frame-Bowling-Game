@@ -13,13 +13,13 @@ function start(){
     hideBall = false; //This effects the "tick" function approximately 40 lines down
     ballButtonText.setAttribute("text", "value", "Position the ball using the WSAD keys, then click it.");
     ballButton.removeEventListener("click", showBall);
-    theBall.addEventListener("click", releaseBall);
+    theBall.addEventListener("click", dropBall);
   }
 
-  function releaseBall(){
+  function dropBall(){
     this.removeAttribute("static-body"); //Bodies must be static if you want to be able to move and rotate them by simply changing variables.
     this.setAttribute("dynamic-body", ""); //Once bodies are dynamic, you can't move or rotate them in the usual way.  Only VECTORS (forces) can move them.
-    theBall.removeEventListener("click", releaseBall);
+    theBall.removeEventListener("click", dropBall);
     ballButtonText.setAttribute("text", "value", "Click the ball again to apply a push!"); // setAttribute can take three arguments.  Adding the third argument lets you change small parts of a long attribute/component value.
     theBall.addEventListener("click", pushBall);
   }
@@ -74,7 +74,7 @@ function start(){
   });
 
   function pushBall(){
-    //Note: This function only works because the ball at this point has been changed to a dynamic-body.  (See releaseBall function above.)
+    //Note: This function only works because the ball at this point has been changed to a dynamic-body.  (See dropBall function above.)
     var Xpush = firstComponentOfPlayerRotation * -22;
     var Zpush = secondComponentOfPlayerRotation * -22; //Since we used a hypotenuse of 1 to calculate these vector components, we now need to multiply each one before using them in a "push" vector (see below).  Otherwise, the push vector might be very weak.
 
