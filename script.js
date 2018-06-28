@@ -3,12 +3,9 @@ document.addEventListener("DOMContentLoaded", start);
 function start(){
   var player = document.querySelector('#player');
   var theBall = document.querySelector('#theBall');
-  var redBox = document.querySelector('#redBox');
-  var cone = document.querySelector('#cone');
   var ballButton = document.querySelector('#ballButton');
   var ballButtonText = document.querySelector('#ballButtonText');
 
-  redBox.addEventListener("click", turnCone);
   ballButton.addEventListener("click", showBall);
 
   var hideBall = true;
@@ -105,6 +102,9 @@ function start(){
   });
 
   //I made the below function as an eary debugging/learning tool.  (It has nothing to do with the game.)  Click on the red box to make the cone point in the same direction as the player.
+  var cone = document.querySelector('#cone');
+  var redBox = document.querySelector('#redBox');
+  redBox.addEventListener("click", turnCone);
   function turnCone(){
     //Note that the cone is static.  This function won't work on a dynamic-body!
     var xConeRotation = player.object3D.rotation.x;
