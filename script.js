@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", start);
 
 function start(){
+  
   var player = document.querySelector('#player');
   var theBall = document.querySelector('#theBall');
   var ballButton = document.querySelector('#ballButton');
@@ -9,6 +10,7 @@ function start(){
   ballButton.addEventListener("click", showBall);
 
   var hideBall = true;
+  
   function showBall(){
     hideBall = false; //This effects the "tick" function approximately 40 lines down
     ballButtonText.setAttribute("text", "value", "Position the ball using the WSAD keys, then click it.");
