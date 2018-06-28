@@ -4,7 +4,8 @@ The script.js file is extensively notated.  My comments attempt to make the code
 
 •	Lines 22-28 discuss how only static-bodies can be moved/rotated through direct manipulation of variables/properties.  Dynamic bodies, on the other hand, can only my manipulated by applying forces.
 
-•	Lines 30 to 49 are the most complicated, but also the most exciting.  These lines discuss forces—aka vectors—and how they can be used alongside trigonometry.  I highly recommend Dan Shiffman’s “Nature of Coding” YouTube series as an extremely accessible way to learn more about vectors. https://www.youtube.com/watch?v=6vX8wT1G798&list=PLRqwX-V7Uu6YVljJvFRCyRM6mmF5wMPeE
+•	Lines 30 to 49 are the most complicated, but also the most exciting.  These lines discuss forces—aka vectors—and how they can be used alongside trigonometry.  I highly recommend Dan Shiffman’s “Nature of Coding” YouTube series as an extremely accessible way to learn more about vectors:
+https://www.youtube.com/watch?v=6vX8wT1G798&list=PLRqwX-V7Uu6YVljJvFRCyRM6mmF5wMPeE
 
 •	Lines 51 to 55 discuss defining your own A-Frame component/attribute.  Most importantly, it shows how defining your own attribute allows you to create a “tick” function.  A tick function is called 90 times per second, which makes it incredibly useful for continuous monitoring of variables/properties.
 
