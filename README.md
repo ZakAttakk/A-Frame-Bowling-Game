@@ -1,6 +1,6 @@
 # A-Frame-Bowling-Game
 
-The script.js file is extensively notated.  My comments attempt to make the code as accessible as possible.  Here is a summary of the comments.
+The script.js file is extensively notated.  My comments attempt to make the code as accessible as possible.  Here is a summary of the comments:
 
 •	Lines 22-28 discuss how only static-bodies can be moved/rotated through direct manipulation of variables/properties.  Dynamic bodies, on the other hand, can only my manipulated by applying forces.
 
